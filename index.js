@@ -147,7 +147,7 @@ bot.on("message",
 
                 var embed = new Discord.RichEmbed()
                     .setTitle("Currently Whitelisted User IDs")
-                    .setDescription(whitelist.toString().replace(/,/g, "\n"))
+                    .setDescription(whitelist.toString())
 
                 message.channel.send(embed)
 
