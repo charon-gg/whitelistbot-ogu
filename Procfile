@@ -1,0 +1,1 @@
+worker: chmod 777 node index && node index
