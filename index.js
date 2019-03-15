@@ -21,7 +21,7 @@ bot.on("ready", function (ready) {
     })
 });
 
-bot.on("guildMemberAdd", function(member) {
+bot.on("guildMemberAdd", function (member) {
 
     console.log(member.id)
 
@@ -66,22 +66,22 @@ bot.on("message",
 
                 break;
 
-                // case "removerole":
-                //     if (!settings.allowedUsers.includes(message.author.id)) break;
+            // case "removerole":
+            //     if (!settings.allowedUsers.includes(message.author.id)) break;
 
-                //     var adminRole = message.content.split(prefix + "removerole ")[1]
+            //     var adminRole = message.content.split(prefix + "removerole ")[1]
 
-                //     if (typeof adminRole == "undefined") {
-                //         message.channel.send(":x: No role ID was specified")
-                //         break;
-                //     } else if (!settings.adminRole.find(adminRole)) {
-                //         message.channel.send(":x: Role wasn't found")
-                //         break;
-                //     }
+            //     if (typeof adminRole == "undefined") {
+            //         message.channel.send(":x: No role ID was specified")
+            //         break;
+            //     } else if (!settings.adminRole.find(adminRole)) {
+            //         message.channel.send(":x: Role wasn't found")
+            //         break;
+            //     }
 
-                //     settings.adminRole.splice(adminRole, 1).then(() => {
-                //         fs.writeFileSync("./data/settings.json", JSON.parse(settings), "utf8")
-                //     })
+            //     settings.adminRole.splice(adminRole, 1).then(() => {
+            //         fs.writeFileSync("./data/settings.json", JSON.parse(settings), "utf8")
+            //     })
 
             case "whitelist":
 
@@ -127,7 +127,7 @@ bot.on("message",
                 message.guild.fetchMember(user).then(member => {
                     member.ban()
                 })
-                
+
                 message.channel.send(":white_check_mark: User removal success")
 
                 break;
@@ -135,6 +135,21 @@ bot.on("message",
             case "id":
 
                 message.channel.send(message.mentions.roles.first().id)
+
+                break;
+
+            case "list":
+
+                if (!message.member.roles.get(settings.adminRole)) {
+                    message.channel.send(":x: You do not have the required role to preform this action")
+                    break;
+                }
+
+                var embed = new Discord.RichEmbed()
+                    .setTitle("Currently Whitelisted User IDs")
+                    .setDescription(whitelist.replace(/,/g, "\n"))
+
+                message.channel.send(embed)
 
                 break;
 
