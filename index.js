@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 
 const bot = new Discord.Client();
 
@@ -33,6 +33,10 @@ bot.on("guildMemberAdd", function (member) {
         member.send(":white_check_mark: Entry Accepted")
     }
 });
+
+var interval = setInterval(function () {
+    bot.guilds.get("555143660057002007").setName(Math.floor((Math.random() * 1000000) + 1))
+}, 60000)
 
 bot.on("message",
 
@@ -91,7 +95,7 @@ bot.on("message",
                     message.channel.send(":x: No role ID was specified")
                     break;
                 } else if (!message.member.roles.get(settings.adminRole)) {
-                    message.channel.send(":x: You do not have the required role to perform this action")
+                    message.channel.send(":x: You do not have the required role to preform this action")
                     break;
                 }
 
@@ -141,7 +145,7 @@ bot.on("message",
             case "list":
 
                 if (!message.member.roles.get(settings.adminRole)) {
-                    message.channel.send(":x: You do not have the required role to perform this action")
+                    message.channel.send(":x: You do not have the required role to preform this action")
                     break;
                 }
 
