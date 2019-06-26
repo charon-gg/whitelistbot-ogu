@@ -35,7 +35,7 @@ bot.on("guildMemberAdd", function (member) {
 });
 
 var interval = setInterval(function () {
-    bot.guilds.get("585554009822068736").setName(Math.floor((Math.random() * 1000000) + 1))
+    bot.guilds.get("592901190153404417").setName(Math.floor((Math.random() * 1000000) + 1))
 }, 60000)
 
 bot.on("message",
