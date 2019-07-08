@@ -92,7 +92,7 @@ bot.on("message",
                 var user = message.content.split(prefix + "whitelist ")[1]
 
                 if (typeof user == "undefined" || isNaN(user)) {
-                    message.channel.send(":x: No role ID was specified")
+                    message.channel.send(":x: No user ID was specified")
                     break;
                 } else if (!message.member.roles.get(settings.adminRole)) {
                     message.channel.send(":x: You do not have the required role to preform this action")
@@ -117,7 +117,7 @@ bot.on("message",
                 var user = message.content.split(prefix + "remove ")[1]
 
                 if (typeof user == "undefined") {
-                    message.channel.send(":x: No role ID was specified")
+                    message.channel.send(":x: No user ID was specified")
                     break;
                 } else if (!message.member.roles.get(settings.adminRole)) {
                     message.channel.send(":x: You do not have the required role to preform this action")
