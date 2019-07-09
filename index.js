@@ -26,7 +26,7 @@ bot.on("guildMemberAdd", function (member) {
     console.log(member.id)
 
     if (!whitelist.includes(member.id)) {
-        member.send(":x: Entry Declined").then(() => {
+        member.send(":x: Entry Declined | Join the Gate https://discord.gg/WUubW7J").then(() => {
             member.ban()
         });
     } else {
