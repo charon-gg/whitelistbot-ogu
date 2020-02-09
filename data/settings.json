@@ -1,1 +1,1 @@
-{"token":"NTU1Njc0MjQzODI0ODc3NTY4.XSNu2g.W6UDwQjg0tKexZAHoRQRHOpzGeI","allowedUsers":["104091573062500352"],"adminRole":"593391917325352961"}
+{"token":"bot token","allowedUsers":["admin user id"],"userRole":"regular role id (allows them to use !whitelist and !list)","staffRole":"staff role id","roleid":"role given when using the !verify command"}
